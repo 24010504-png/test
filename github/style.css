@@ -1,0 +1,189 @@
+@font-face {
+    font-family: "tamanegi";
+    src: url(fonts/玉ねぎ楷書激無料版v7改.ttf) format(truetype);
+}
+@font-face {
+    font-family: "lanove";
+    src: url(fonts/LightNovelPOPv2.otf) format(truetype);
+}
+
+/* 共通スタイル */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* ヘッダーとナビゲーションのスタイル */
+header {
+    background-color: #C8F8FF;
+    /* background-image: url(image/バナー.png);
+    background-repeat: no-repeat;
+    height: 110px; */
+    padding: 10px 20px;
+    /* Flexboxを有効にして子要素（ホームとナビ）を配置 */
+    display: flex;
+    /* 要素を両端に配置 */
+    justify-content: space-between;
+    /* 垂直方向の中央揃え */
+    align-items: center;
+}
+
+/* 1. ホームボタン（画像）のスタイル */
+.home-logo a {
+    display: block;
+}
+
+.home-logo img {
+    /* 画像が大きすぎないようにサイズを指定 */
+    width: 255px;
+    height: 70px;
+    /* リンクの装飾を消す */
+    border: none;
+    display: block;
+    color: #FFFB9B;
+}
+
+/* 2. 右側のナビゲーションボタンのスタイル */
+.nav-buttons {
+    padding-right: 200px;
+}
+
+.nav-buttons a {
+    font-size: 150%;
+    font-family: "lanove";
+    color: Black;
+    text-decoration: none;
+    padding: 10px 15px;
+    margin-left: 10px;
+    /* ボタン間のスペース */
+    border-radius: 1px;
+    /* background-color: #555; */
+    transition: 0.3s;
+    text-shadow: 5px 2.5px 3px  #7D7D7D;
+}
+
+.nav-buttons a:hover {
+    color: #777;
+}
+
+/* コンテンツエリアのスタイル */
+.maintitle {
+    width: 80%;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+/* 2ページ目 */
+
+.container {
+
+    font-family: "tamanegi";
+    width: 80%;
+    padding: 1px 150px 500px 150px;
+    text-align: center;
+    background-image: url(image/testback2.jpg);
+    background-size: cover;
+    font-size: 300%;
+
+
+
+    /* background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+
+    /* 箱なしで作る indexと別ページでわけるかも？ */
+}
+
+.containertest {
+    font-size: 50%;
+    font-family: "lanove";
+    text-shadow: white;
+    -webkit-text-stroke: 0.7px white;
+}
+
+.containerP3 {
+    font-family: "lanove";
+}
+
+/* 2ページ目終わり */
+
+/* ----------------------------------------------------- */
+
+
+/* フッター */
+footer {
+    background-color: #C8F8FF;
+    padding: 10px 20px;
+    /* Flexboxを有効にして子要素（ホームとナビ）を配置 */
+    display: flex;
+    /* 要素を両端に配置 */
+    justify-content: space-between;
+    /* 垂直方向の中央揃え */
+    align-items: center;
+    text-align: center;
+}
+
+/* --- 「続きを読む」スタイル --- */
+.read-more-container {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-image: url(image/PXL_20251102_060628575.jpg);
+    background-size: auto 975.35px;
+    
+    background-repeat: no-repeat;
+    /* background-color: white; */
+    box-shadow: 5px 10px 20px  #7D7D7D;
+}
+
+.read-more-content {
+    overflow: hidden; /* コンテンツがはみ出さないように隠す */
+    transition: max-height 0.5s ease-out; /* スムーズなアニメーション */
+}
+
+/* 初期表示時の高さ制限（最初の数行が見える程度に調整） */
+.read-more-content.initial-hide {
+    max-height: 80px; /* ここを調整して、初期表示で見せる高さを変える */
+    position: relative;
+}
+
+/* 続きを読むボタンがアクティブでない場合のみグラデーションを適用 */
+.read-more-content.initial-hide::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 30px; /* グラデーションの高さ */
+    /* background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);     */
+    pointer-events: none; /* グラデーションを通して下のコンテンツをクリック可能にする */
+}
+
+/* 全表示時のmax-height（コンテンツの最大値よりも大きく設定） */
+.read-more-content.expanded {
+    max-height: 1000px; /* 十分な高さに設定。コンテンツの量に応じて調整 */
+}
+
+.read-more-button {
+    text-align: center;
+    display: block;
+    width: 150px;
+    margin: 15px auto 0;
+    padding: 10px 3px;
+    background-color: white;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.8em;
+    transition: background-color 0.3s ease;
+    -webkit-text-stroke: 0;
+}
+
+.read-more-button:hover {
+    background-color: #ABABAB;
+}
