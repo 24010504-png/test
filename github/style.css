@@ -82,7 +82,7 @@ header {
 
     font-family: "tamanegi";
     width: 80%;
-    padding: 1px 150px 500px 150px;
+    padding: 1px 150px 300px 150px;
     text-align: center;
     background-image: url(image/testback2.jpg);
     background-size: cover;
@@ -116,6 +116,7 @@ header {
 footer {
     background-color: #C8F8FF;
     padding: 10px 20px;
+    /* margin-top: -200px; */
     /* Flexboxを有効にして子要素（ホームとナビ）を配置 */
     display: flex;
     /* 要素を両端に配置 */
@@ -186,4 +187,261 @@ footer {
 
 .read-more-button:hover {
     background-color: #ABABAB;
+}
+
+/* --- Page3: 観光スポット専用スタイル --- */
+
+.containerP3 {
+    font-family: tamanegi;
+    text-align: center;
+    margin: 30px;
+    margin-bottom: 40px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    font-size: 32px;
+}
+
+.containerP3 h2 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* スポットカード全体のリスト */
+.spot-list {
+    display: flex;
+    flex-direction: column;
+    gap: 50px; /* カード同士の間隔 */
+}
+
+/* スポットカード単体 */
+.spot-card {
+    font-family: lanove;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    padding-left: 20px;
+}
+
+.spot-card:hover {
+    transform: translateY(-5px); /* 少し浮き上がる演出 */
+}
+
+/* 2番目のカードなどを左右反転させる */
+.spot-card.reverse {
+    flex-direction: row-reverse;
+    padding-right: 10px;
+}
+
+.spot-image.reverse {
+    margin-right: 12px;
+    margin-left: -22px;
+    width: auto;
+    height: 230px;
+}
+
+.spot-image {
+    flex: 1;
+    min-height: 250px;
+    margin-right: -30px;
+    width: auto;
+    height: 290px;
+}
+
+.spot-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.spot-content {
+    flex: 1.2;
+    padding: 30px;
+    font-family: lanove;
+}
+
+.category {
+    display: inline-block;
+    background-color: #007bff;
+    color: white;
+    font-size: 30px;
+    padding: 3px 10px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+}
+
+.spot-content h3 {
+    margin: 0 0 15px 0;
+    font-size: 30px;
+    color: #222;
+}
+
+.spot-content p {
+    line-height: 1.7;
+    color: #666;
+    margin: 0;
+    font-size: 25px;
+}
+
+/* モバイル対応：画面が狭くなったら縦並びに */
+@media (max-width: 768px) {
+    .spot-card, .spot-card.reverse {
+        flex-direction: column;
+    }
+    .spot-image {
+        width: 100%;
+        height: 200px;
+    }
+}
+
+/* --- Page4: 関連作品ギャラリースタイル --- */
+
+.page-title {
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.work-grid {
+    font-size: 25px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 横に2つ並べる */
+    gap: 30px;
+}
+
+.work-item {
+    background-color: #fff;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.work-image {
+    width: 100%;
+    height: 250px;
+    background-color: #f0f0f0;
+}
+
+.work-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.work-info {
+    padding: 25px;
+}
+
+.artist {
+    display: block;
+    font-size: 0.85em;
+    color: #007bff;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.work-info h3 {
+    margin: 0 0 15px 0;
+    font-size: 1.3em;
+}
+
+.work-info p {
+    font-size: 0.95em;
+    line-height: 1.6;
+    color: #555;
+    margin: 0;
+}
+
+/* スマホ対応：1列にする */
+@media (max-width: 768px) {
+    .work-grid {
+        grid-template-columns: 1fr;
+    }
+    .work-image {
+        height: 200px;
+    }
+}
+
+/* サマポケなど特定のカードを強調する場合の追加スタイル */
+.highlight-card {
+    font-family: lanove;
+    border: 2px solid #e7f3ff; /* 枠線を少し青く */
+    background-color: #f0f8ff; /* 背景を非常に薄い水色に */
+    font-size: 25px;
+}
+
+/* 作品画像のホバー時に少しズームする演出（共通） */
+.work-image img {
+    font-family: lanove;
+    transition: transform 0.5s ease;
+}
+
+.work-item:hover .work-image img {
+    font-family: lanove;
+    transform: scale(1.1);
+}
+.work-info {
+    font-family: lanove;
+}
+
+/* --- YouTube 2列レイアウトのスタイル --- */
+
+.video-section {
+    font-family: lanove;
+    margin-top: 50px;
+    padding: 40px 20px;
+    background-color: #f0f8ff;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.video-intro {
+    margin-bottom: 30px;
+    color: #555;
+}
+
+/* 動画を2列に並べるグリッド設定 */
+.video-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 横に2等分 */
+    gap: 30px; /* 動画同士の隙間 */
+}
+
+.video-item h4 {
+    margin-bottom: 15px;
+    font-size: 1.1em;
+    color: #333;
+}
+
+/* 動画を16:9に保つコンテナ */
+.video-container {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%; /* 16:9比率 */
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* スマホ対応：画面が狭いときは1列にする */
+@media (max-width: 768px) {
+    .video-grid {
+        grid-template-columns: 1fr; /* 1列に変更 */
+    }
 }
