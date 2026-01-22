@@ -445,3 +445,88 @@ footer {
         grid-template-columns: 1fr; /* 1列に変更 */
     }
 }
+
+/* ==========================================
+   スマホ・タブレット向け調整 (画面幅 768px 以下)
+   ========================================== */
+@media (max-width: 768px) {
+    
+    /* 1. ヘッダー：ロゴとボタンを上下に並べる */
+    header {
+        flex-direction: column;
+        padding: 15px 10px;
+        gap: 15px;
+    }
+
+    .nav-buttons {
+        width: 100%;
+        justify-content: space-around; /* ボタンを均等に並べる */
+        gap: 5px;
+    }
+
+    .nav-buttons a {
+        padding: 8px 10px;
+        font-size: 0.85rem; /* 文字を少し小さく */
+        flex: 1;
+        text-align: center;
+    }
+
+    /* 2. 全体コンテナの余白調整 */
+    .container {
+        padding: 15px;
+    }
+
+    /* 3. Page3：観光スポットのカードを縦並びに */
+    .spot-card, 
+    .spot-card.reverse {
+        flex-direction: column !important; /* 横並び・逆並びを解除して縦にする */
+        margin-bottom: 30px;
+    }
+
+    .spot-image, 
+    .spot-image.reverse {
+        width: 100%;
+        height: 200px; /* スマホで見やすい高さに固定 */
+    }
+
+    .spot-content {
+        padding: 20px;
+    }
+
+    /* 4. Page4：関連作品のグリッドを1列に */
+    .work-grid {
+        grid-template-columns: 1fr; /* 2列から1列へ */
+        gap: 20px;
+    }
+
+    /* 動画セクションをグリッドの枠いっぱいに広げる */
+    .video-section {
+        grid-column: 1 / -1; 
+        margin-top: 20px;
+        padding: 20px 10px;
+    }
+
+    /* 5. 動画の2列レイアウトを1列に */
+    .video-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    /* 6. フッターの調整 */
+    .footer-container {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+}
+
+/* さらに小さい画面（iPhone SEなど 480px以下）向けの微調整 */
+@media (max-width: 480px) {
+    h2 { font-size: 1.5rem; }
+    h3 { font-size: 1.2rem; }
+    
+    .nav-buttons a {
+        font-size: 0.75rem;
+        padding: 5px;
+    }
+}
